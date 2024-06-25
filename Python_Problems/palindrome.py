@@ -25,4 +25,4 @@ def is_palindrome(x):
     return f"{data} is Palindrome"
 
 
-print(is_palindrome(1551))
+print(is_palindrome("malayalam"))

@@ -22,4 +22,4 @@ def is_prime_number(num):
     return f"{num} is Prime Number"
 
 
-print(is_prime_number(13))
+print(is_prime_number(3))

@@ -18,4 +18,4 @@ def factorial(num):
         result *= num
     return result
 
-print(factorial(5))
+print(factorial(4))

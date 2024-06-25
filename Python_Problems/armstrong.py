@@ -26,4 +26,4 @@ def is_armstrong(num):
     return f"{num} is not armstrong"
         
 
-print(is_armstrong(1634))
+print(is_armstrong(124))

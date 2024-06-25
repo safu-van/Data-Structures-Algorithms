@@ -12,6 +12,9 @@ In fibonacci sequence the number n3 should be n1, n2.
 
 
 def fibonacci(limit):
+    if limit <= 1:
+        return limit
+    
     result = []
     num1, num2 = 0, 1
 
@@ -21,4 +24,4 @@ def fibonacci(limit):
 
     return result
 
-print(fibonacci(5))
+print(fibonacci(1))
