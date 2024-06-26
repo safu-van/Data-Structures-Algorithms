@@ -31,7 +31,7 @@ def reverse_array(lst):
 
 print(reverse_array([1, 2, 3]))
 
-        # Or
+    # Or
 
 def reverse_lst(lst):
     reversed_lst = []
