@@ -1,10 +1,5 @@
 # Find the missing number in List/Array.
 
-"""
-This we can solve in 2 methods.
-
-"""
-
 
 def find_missing(lst):
     missing_numbers = []

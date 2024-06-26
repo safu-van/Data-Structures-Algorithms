@@ -1,10 +1,5 @@
 # Reverse List/Array
 
-"""
-There are several method to reverse an List/Array
-
-"""
-
 
 # Using reverse() Method
 def reverse_list(lst):
