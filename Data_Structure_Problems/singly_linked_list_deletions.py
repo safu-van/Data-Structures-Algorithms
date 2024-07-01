@@ -53,6 +53,20 @@ class LinkedList:
             current_node.next = None
 
 
+    # to delete node of given value
+    def delete_node_value(self, value):
+        if self.head.data == value:
+            self.head = self.head.next
+        else:
+            current_node = self.head
+            while current_node.next:
+                if current_node.next.data == value:
+                    current_node.next = current_node.next.next
+                    return
+                current_node = current_node.next
+            print(f"{value} is not in list")
+            
+
     def show(self):
         current_node = self.head
         while current_node:
@@ -69,5 +83,6 @@ ll1.insert_at_beginning(1)
 ll1.delete_the_beginning()
 ll1.delete_the_index(2)
 ll1.delete_the_end()
+ll1.delete_node_value(5)
 ll1.show()
 
