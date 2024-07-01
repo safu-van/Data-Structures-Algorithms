@@ -1,4 +1,4 @@
-# Reverse a Singly Linked List
+# Find middle node of a Singly Linked List.
 
 
 class Node:
@@ -18,16 +18,14 @@ class LinkedList:
         self.head = new_node
     
 
-    # reverse a linked list
-    def reverse(self):                      
-        prev_node = None
-        current_node = self.head
-        while current_node:
-            next_node = current_node.next
-            current_node.next = prev_node
-            prev_node = current_node
-            current_node = next_node
-        self.head = prev_node
+    # find middle node
+    def middle(self):
+        a = self.head
+        b = self.head
+        while b and b.next:
+            a = a.next
+            b = b.next.next
+        print(a.data)    
     
 
     def show(self):
@@ -44,5 +42,4 @@ ll1.insert_to_beginning(2)
 ll1.insert_to_beginning(1)
 ll1.show()
 print()
-ll1.reverse()
-ll1.show()
+ll1.middle()
