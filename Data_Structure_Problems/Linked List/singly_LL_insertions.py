@@ -72,7 +72,7 @@ class LinkedList:
     def append(self, data):
         new_node = Node(data)
         current_node = self.head
-        while current_node.next:
+        while current_node.next:                        # if tail is provided then we can do this function in O(1) time.
             current_node = current_node.next
         current_node.next = new_node
     

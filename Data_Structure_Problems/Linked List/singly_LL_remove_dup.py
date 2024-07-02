@@ -34,6 +34,7 @@ class LinkedList:
                     return
                 current_node = current_node.next
     
+    
     # to check duplicate values and passed to delete_node_value() method for deleting the node.
     def remove_duplicates(self):
         seen = set()
