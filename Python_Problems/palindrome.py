@@ -12,8 +12,6 @@ read backwards and forwards it will be same.
 
 def is_palindrome(x):
     data = str(x)
-    data = data.replace(" ","")
-    data = data.lower()
 
     start = 0
     end = len(data) - 1
@@ -26,3 +24,25 @@ def is_palindrome(x):
 
 
 print(is_palindrome("malayalam"))
+
+
+# Using Slicing
+def is_pal(x):
+    data = str(x)
+
+    if data == data[::-1]:
+        return f"{data} is Palindrome"
+    return f"{data} is not Palindrome"
+
+print(is_pal(123))
+
+
+# Using reverse() Method
+def is_pali(x):
+    data = str(x)
+
+    if list(data) == list(reversed(data)):
+        return f"{data} is Palindrome"
+    return f"{data} is not Palindrome"
+
+print(is_pali("madam"))
