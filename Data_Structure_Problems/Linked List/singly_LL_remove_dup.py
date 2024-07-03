@@ -21,29 +21,24 @@ class LinkedList:
             while current_node.next:
                 current_node = current_node.next
             current_node.next = new_node
-            
-
-    def delete_node_value(self, value):
-        if self.head.data == value:
-            self.head = self.head.next
-        else:
-            current_node = self.head
-            while current_node.next:
-                if current_node.next.data == value:
-                    current_node.next = current_node.next.next
-                    return
-                current_node = current_node.next
     
     
-    # to check duplicate values and passed to delete_node_value() method for deleting the node.
+    # to remove duplicate values
     def remove_duplicates(self):
         seen = set()
+        prev_node = None
         current_node = self.head
+
         while current_node:
             if current_node.data in seen:
-                self.delete_node_value(current_node.data)
+                if current_node.next:
+                    prev_node.next = current_node.next
+                    current_node = prev_node
+                else:
+                    prev_node.next = None
             else:
                 seen.add(current_node.data)
+            prev_node = current_node
             current_node = current_node.next
     
 
@@ -57,11 +52,13 @@ class LinkedList:
 
 ll1 = LinkedList()
 ll1.append(1)
+ll1.append(2)
+ll1.append(3)
+ll1.append(1)
 ll1.append(1)
 ll1.append(2)
-ll1.append(3)
 ll1.append(2)
-ll1.append(3)
+ll1.append(1)
 ll1.show()
 print()
 ll1.remove_duplicates()
