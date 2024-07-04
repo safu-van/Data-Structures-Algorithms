@@ -12,7 +12,7 @@ class Stack:
         self.length = 0
     
 
-    # to add node to last of stack.
+    # to add node to top of stack.
     def push(self, data):
         new_node = Node(data)
 
@@ -25,7 +25,7 @@ class Stack:
         self.length += 1
     
 
-    # to remove last node from stack.
+    # to remove top node from stack.
     def pop(self):
         if self.top is None:
             print("stack underflow")
@@ -34,7 +34,7 @@ class Stack:
             self.length -= 1
     
 
-    # to print last node data from stack.
+    # to print top node data from stack.
     def peek(self):
         if self.top is None:
             print("stack underflow")
