@@ -50,9 +50,9 @@ class Stack:
     # to print the stack is empty or not.
     def is_empty(self):
         if self.top:
-            print("False")
+            print(False)
         else:
-            print("True")
+            print(True)
     
     
     # to print the stack.
