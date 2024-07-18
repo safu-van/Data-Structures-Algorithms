@@ -113,6 +113,18 @@ class BST:
 
         return self
 
+    def min(self):
+        node = self
+        while node.left:
+            node = node.left
+        return node.data
+    
+    def max(self):
+        node = self
+        while node.right:
+            node = node.right
+        return node.data
+    
 
 
 root = BST(10)
@@ -137,5 +149,9 @@ print()
 
 root.delete(10, root.data)
 root.pre_order()
+print()
+
+print(f"min element {root.min()}")
+print(f"max element {root.max()}")
 
     
