@@ -43,6 +43,16 @@ class BST:
             else:
                 print("Node not found")
 
+    # Pre-Order Traversal
+    def pre_order(self):
+        print(self.data, end=" ")
+
+        if self.left:
+            self.left.pre_order()
+
+        if self.right:
+            self.right.pre_order()    
+
 
 root = BST(10)
 
@@ -53,5 +63,6 @@ root.insert(2)
 root.search(2)
 root.search(5)
 
+root.pre_order()
 
     
