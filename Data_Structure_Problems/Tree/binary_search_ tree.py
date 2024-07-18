@@ -70,15 +70,15 @@ class BST:
         print(self.data, end=" ")
     
     # Delete node
-    def delete(self, data):        
+    def delete(self, data, root_data):        
         if data < self.data:
             if self.left:
-                self.left = self.left.delete(data)
+                self.left = self.left.delete(data, root_data)
             else:
                 print(f"{data} node is not found")
         elif data > self.data:
             if self.right:
-                self.right = self.right.delete(data)
+                self.right = self.right.delete(data, root_data)
             else:
                 print(f"{data} node is not found")
         else:
@@ -88,8 +88,20 @@ class BST:
 
             # Case 2 : Delete node with 1 child
             if self.left is None:
+                """ when deleting root node with 1 child do this """
+                if data == root_data:
+                    self.data = self.right.data
+                    self.left = self.right.left
+                    self.right = self.right.right
+                    return
                 return self.right
             elif self.right is None:
+                """ when deleting root node with 1 child do this """
+                if data == root_data:
+                    self.data = self.left.data
+                    self.left = self.left.left
+                    self.right = self.left.right
+                    return
                 return self.left                
             
             # Case 3 : Delete node with 2 child
@@ -97,8 +109,8 @@ class BST:
             while node.left:
                 node = node.left
             self.data = node.data
-            self.right = self.right.delete(node.data)
-            
+            self.right = self.right.delete(node.data, root_data)
+
         return self
 
 
@@ -109,22 +121,21 @@ root.insert(20)
 root.insert(30)
 root.insert(2)
 
-# root.contains(2)
-# root.contains(5)
+root.contains(2)
 
 print("Pre-Order :", end=" ")
 root.pre_order()
-# print()
-
-# print("In-Order :", end=" ")
-# root.in_order()
-# print()
-
-# print("Post-Order :", end=" ")
-# root.post_order()
 print()
 
-root.delete(10)
+print("In-Order :", end=" ")
+root.in_order()
+print()
+
+print("Post-Order :", end=" ")
+root.post_order()
+print()
+
+root.delete(10, root.data)
 root.pre_order()
 
     
