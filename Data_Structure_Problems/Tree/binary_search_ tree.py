@@ -7,11 +7,7 @@ class BST:
         self.right = None
 
     # Insert node
-    def insert(self, data):
-        if self.data is None:
-            self.data = data
-            return 
-        
+    def insert(self, data):        
         if self.data == data:
             return
         
@@ -74,11 +70,7 @@ class BST:
         print(self.data, end=" ")
     
     # Delete node
-    def delete(self, data):
-        if self.data is None:
-            print("Tree is empty")
-            return
-        
+    def delete(self, data):        
         if data < self.data:
             if self.left:
                 self.left = self.left.delete(data)
@@ -90,17 +82,23 @@ class BST:
             else:
                 print(f"{data} node is not found")
         else:
+            # Case 1 : Delete node with 0 child
+            if self.left is None and self.right is None:
+                return None
+
+            # Case 2 : Delete node with 1 child
             if self.left is None:
                 return self.right
+            elif self.right is None:
+                return self.left                
             
-            if self.right is None:
-                return self.left
-            
+            # Case 3 : Delete node with 2 child
             node = self.right
             while node.left:
                 node = node.left
             self.data = node.data
             self.right = self.right.delete(node.data)
+            
         return self
 
 
@@ -111,23 +109,22 @@ root.insert(20)
 root.insert(30)
 root.insert(2)
 
-root.contains(2)
-root.contains(5)
+# root.contains(2)
+# root.contains(5)
 
 print("Pre-Order :", end=" ")
 root.pre_order()
-print()
+# print()
 
-print("In-Order :", end=" ")
-root.in_order()
-print()
+# print("In-Order :", end=" ")
+# root.in_order()
+# print()
 
-print("Post-Order :", end=" ")
-root.post_order()
+# print("Post-Order :", end=" ")
+# root.post_order()
 print()
 
 root.delete(10)
-root.delete(20)
 root.pre_order()
 
     
