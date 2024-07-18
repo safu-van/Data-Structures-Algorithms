@@ -53,6 +53,26 @@ class BST:
         if self.right:
             self.right.pre_order()    
 
+    # In-Order Traversal
+    def in_order(self):
+        if self.left:
+            self.left.in_order()
+
+        print(self.data, end=" ")
+
+        if self.right:
+            self.right.in_order()  
+    
+    # Post-Order Traversal
+    def post_order(self):
+        if self.left:
+            self.left.post_order()
+        
+        if self.right:
+            self.right.post_order()
+        
+        print(self.data, end=" ")
+
 
 root = BST(10)
 
@@ -63,6 +83,13 @@ root.insert(2)
 root.search(2)
 root.search(5)
 
+print("Pre-Order :", end=" ")
 root.pre_order()
+print()
+print("In-Order :", end=" ")
+root.in_order()
+print()
+print("Post-Order :", end=" ")
+root.post_order()
 
     
