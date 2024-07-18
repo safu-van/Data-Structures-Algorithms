@@ -27,19 +27,19 @@ class BST:
                 self.right = BST(data)
     
     # Search node
-    def search(self, data):
+    def contains(self, data):
         if self.data == data:
             print("Node found")
             return
         
         if data < self.data:
             if self.left:
-                self.left.search(data)
+                self.left.contains(data)
             else:
                 print("Node not found")
         else:
             if self.right:
-                self.right.search(data)
+                self.right.contains(data)
             else:
                 print("Node not found")
 
@@ -72,6 +72,37 @@ class BST:
             self.right.post_order()
         
         print(self.data, end=" ")
+    
+    # Delete node
+    def delete(self, data):
+        if self.data is None:
+            print("Tree is empty")
+            return
+        
+        if data < self.data:
+            if self.left:
+                self.left = self.left.delete(data)
+            else:
+                print(f"{data} node is not found")
+        elif data > self.data:
+            if self.right:
+                self.right = self.right.delete(data)
+            else:
+                print(f"{data} node is not found")
+        else:
+            if self.left is None:
+                return self.right
+            
+            if self.right is None:
+                return self.left
+            
+            node = self.right
+            while node.left:
+                node = node.left
+            self.data = node.data
+            self.right = self.right.delete(node.data)
+        return self
+
 
 
 root = BST(10)
@@ -80,16 +111,23 @@ root.insert(20)
 root.insert(30)
 root.insert(2)
 
-root.search(2)
-root.search(5)
+root.contains(2)
+root.contains(5)
 
 print("Pre-Order :", end=" ")
 root.pre_order()
 print()
+
 print("In-Order :", end=" ")
 root.in_order()
 print()
+
 print("Post-Order :", end=" ")
 root.post_order()
+print()
+
+root.delete(10)
+root.delete(20)
+root.pre_order()
 
     
