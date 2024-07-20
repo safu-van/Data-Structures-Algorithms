@@ -69,6 +69,19 @@ class BST:
         
         print(self.data, end=" ")
     
+    # Level-Order Traversal
+    def level_order(self):
+        queue = []
+        queue.append(self)
+
+        while queue:
+            node = queue.pop(0)
+            print(node.data, end=" ")
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+    
     # Delete node
     def delete(self, data, root_data):        
         if data < self.data:
@@ -145,6 +158,10 @@ print()
 
 print("Post-Order :", end=" ")
 root.post_order()
+print()
+
+print("Level-Order :", end=" ")
+root.level_order()
 print()
 
 root.delete(10, root.data)
