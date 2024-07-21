@@ -8,7 +8,7 @@ class MinHeap:
     def build_heap(self, array):
         self.heap = array
         last_idx = len(self.heap) -1
-        parent_idx = int((last_idx - 1)/2)
+        parent_idx = (last_idx - 1) // 2
 
         while parent_idx >= 0:
             self.shift_down(parent_idx)
