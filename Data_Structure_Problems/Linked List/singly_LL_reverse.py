@@ -11,13 +11,11 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
-
     def insert_to_beginning(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
     
-
     # reverse a linked list
     def reverse(self):                      
         prev_node = None
@@ -29,7 +27,6 @@ class LinkedList:
             current_node = next_node
         self.head = prev_node
     
-
     def show(self):
         current_node = self.head
         while current_node:

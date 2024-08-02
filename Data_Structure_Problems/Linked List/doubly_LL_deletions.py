@@ -13,7 +13,6 @@ class LinkedList:
         self.head = None
         self.tail = None
     
-    
     def insert_at_beginning(self, data):
         new_node = Node(data)
 
@@ -26,7 +25,6 @@ class LinkedList:
         self.head.prev = new_node
         self.head = new_node
     
-
     # to delete node at the beginning.
     def delete_the_beginning(self):
         if self.head == self.tail:
@@ -37,7 +35,6 @@ class LinkedList:
         self.head = self.head.next
         self.head.prev = None
 
-    
     # to delete node at the specified index.
     def delete_the_index(self, index):
         if index == 0:
@@ -67,7 +64,6 @@ class LinkedList:
         current_node.prev.next = current_node.next
         current_node.next.prev = current_node.prev
 
-
     # to delete node at the end.
     def delete_the_end(self):
         if self.head == self.tail:
@@ -78,7 +74,6 @@ class LinkedList:
         self.tail = self.tail.prev
         self.tail.next = None
                 
-
     # to delete node of given value.
     def delete_node_value(self, value):
         if self.head.data == value:
@@ -106,13 +101,11 @@ class LinkedList:
         current_node.prev.next = current_node.next
         current_node.next.prev = current_node.prev
 
-
     def reverse_show(self):
         current_node = self.tail 
         while current_node:
             print(current_node.data, end=" ")
             current_node = current_node.prev
-
 
     def show(self):
         current_node = self.head

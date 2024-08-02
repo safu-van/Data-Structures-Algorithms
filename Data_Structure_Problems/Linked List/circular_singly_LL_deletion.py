@@ -11,7 +11,6 @@ class LinkedList:
         self.head = None
         self.tail = None
     
-
     def insert_at_beginning(self, data):
         new_node = Node(data)
 
@@ -24,7 +23,6 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
         self.tail.next = self.head
-
 
     # to delete node at the beginning
     def delete_the_beginning(self):
@@ -40,7 +38,6 @@ class LinkedList:
         self.head = self.head.next
         self.tail.next = self.head
     
-
     # to delete node at the end
     def delete_the_end(self):
         if self.head is None:
@@ -57,7 +54,6 @@ class LinkedList:
             current_node = current_node.next
         self.tail = current_node
         self.tail.next = self.head
-
 
     def show(self):
         current_node = self.head

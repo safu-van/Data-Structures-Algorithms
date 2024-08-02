@@ -11,13 +11,11 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-
     def insert_at_beginning(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
     
-
     # to delete node at the beginning
     def delete_the_beginning(self):
         if self.head is None:
@@ -25,7 +23,6 @@ class LinkedList:
             return
         self.head = self.head.next
 
-    
     # to delete node at the specified index
     def delete_the_index(self, index):
         if index == 0:
@@ -41,7 +38,6 @@ class LinkedList:
             else:
                 current_node.next = current_node.next.next
             
-    
     # to delete node at the end
     def delete_the_end(self):
         if self.head.next is None:
@@ -51,7 +47,6 @@ class LinkedList:
             while current_node.next.next:
                 current_node = current_node.next
             current_node.next = None
-
 
     # to delete node of given value
     def delete_node_value(self, value):
@@ -66,7 +61,6 @@ class LinkedList:
                 current_node = current_node.next
             print(f"{value} is not in list")
             
-
     def show(self):
         current_node = self.head
         while current_node:

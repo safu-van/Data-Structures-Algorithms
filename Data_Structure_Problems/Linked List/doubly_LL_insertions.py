@@ -13,7 +13,6 @@ class LinkedList:
         self.head = None
         self.tail = None
     
-
     # to insert node at the beginning.
     def insert_at_beginning(self, data):
         new_node = Node(data)
@@ -27,7 +26,6 @@ class LinkedList:
         self.head.prev = new_node
         self.head = new_node
 
-    
     # to insert node at the specified index.
     def insert_at_index(self, index, data):
         new_node = Node(data)
@@ -59,7 +57,6 @@ class LinkedList:
         current_node.next = new_node
         new_node.prev = current_node
             
-
     # to insert node before the specified node.
     def insert_before_node(self, node_data, data):
         new_node = Node(data)
@@ -84,7 +81,6 @@ class LinkedList:
         new_node.prev = current_node.prev
         new_node.next = current_node
         current_node.prev = new_node
-
 
     # to insert node after the specified node.
     def insert_after_node(self, node_data, data):
@@ -111,7 +107,6 @@ class LinkedList:
         new_node.prev = current_node
         current_node.next = new_node
 
-
     # to insert node at the end.
     def append(self, data):
         new_node = Node(data)
@@ -119,14 +114,12 @@ class LinkedList:
         self.tail.next = new_node
         self.tail = new_node
 
-
     # to reverse print
     def reverse_show(self):
         current_node = self.tail 
         while current_node:
             print(current_node.data, end=" ")
             current_node = current_node.prev
-
 
     def show(self):
         current_node = self.head

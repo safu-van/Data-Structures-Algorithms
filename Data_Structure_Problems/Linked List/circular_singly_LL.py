@@ -11,7 +11,6 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-
     # to insert node at the beginning.
     def insert_at_beginning(self, data):
         new_node = Node(data)
@@ -26,7 +25,6 @@ class LinkedList:
         self.head = new_node
         self.tail.next = self.head
     
-
     # to insert node before the specified node.
     def insert_before_node(self, node_data, data):
         new_node = Node(data)
@@ -46,7 +44,6 @@ class LinkedList:
             current_node = current_node.next
         print(f"{node_data} not found in list")
 
-    
     # to insert node after the specified node.
     def insert_after_node(self, node_data, data):
         new_node = Node(data)
@@ -66,7 +63,6 @@ class LinkedList:
             current_node = current_node.next
         print(f"{node_data} is not in the list")
 
-
     # to insert node at the end.
     def append(self, data):
         new_node = Node(data)
@@ -74,7 +70,6 @@ class LinkedList:
         self.tail.next = new_node
         self.tail = new_node
         self.tail.next = self.head
-
 
     def show(self):
         current_node = self.head

@@ -11,13 +11,11 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-
     # to insert node at the beginning.
     def insert_at_beginning(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
-
 
     # to insert node at the specified index
     def insert_at_index(self, index, data):
@@ -37,7 +35,6 @@ class LinkedList:
                 new_node.next = current_node.next
                 current_node.next = new_node
 
-
     # to insert node before the specified node.
     def insert_before_node(self, node_data, data):
         new_node = Node(data)
@@ -54,7 +51,6 @@ class LinkedList:
                 current_node = current_node.next
             print(f"{node_data} is not in the list")
     
-
     # to insert node after the specified node.
     def insert_after_node(self, node_data, data):
         new_node = Node(data)
@@ -67,7 +63,6 @@ class LinkedList:
             current_node = current_node.next
         print(f"{node_data} is not in the list")
     
-
     # to insert node at the end.
     """ if tail is provided then we can do this function in O(1) time. """
     def append(self, data):
@@ -77,7 +72,6 @@ class LinkedList:
             current_node = current_node.next
         current_node.next = new_node
     
-
     # to print the list.
     def show(self):
         current_node = self.head

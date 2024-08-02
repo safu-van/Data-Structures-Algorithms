@@ -11,7 +11,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
         
-
     def append(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -21,7 +20,6 @@ class LinkedList:
             while current_node.next:
                 current_node = current_node.next
             current_node.next = new_node
-    
     
     # to remove duplicate values
     def remove_duplicates(self):
@@ -41,7 +39,6 @@ class LinkedList:
             prev_node = current_node
             current_node = current_node.next
     
-
     def show(self):
         current_node = self.head
         while current_node:

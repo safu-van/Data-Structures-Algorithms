@@ -10,7 +10,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
-
     # Converting array to linked list
     def array_to_LL(self, array):
         new_node = Node(array[0])
@@ -22,7 +21,6 @@ class LinkedList:
             current_node.next = new_node
             current_node = current_node.next
     
-
     def show(self):
         current_node = self.head
         while current_node:

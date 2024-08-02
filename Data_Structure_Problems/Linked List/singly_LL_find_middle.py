@@ -11,13 +11,11 @@ class LinkedList:
     def __init__(self):
         self.head = None
     
-
     def insert_to_beginning(self, data):
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
     
-
     # find middle node
     def middle(self):
         a = self.head
@@ -27,7 +25,6 @@ class LinkedList:
             b = b.next.next
         print(a.data)    
     
-
     def show(self):
         current_node = self.head
         while current_node:
