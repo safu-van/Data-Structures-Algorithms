@@ -12,7 +12,6 @@ class TreeNode:
         data.parent = self
         self.child.append(data)
 
-
     """ to find that the node is in which level so as i want to put space in front before printing """
     def get_level(self):
         level = 0
@@ -23,7 +22,6 @@ class TreeNode:
         
         return level
     
-
     def print(self):
         space = " " * self.get_level() * 3
         prefix = space + "|__" if self.parent else ""
