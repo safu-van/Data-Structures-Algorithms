@@ -9,7 +9,6 @@ class Stack:
     def __init__(self):
         self.top = None
 
-
     def push(self, data):
         for i in data:
             new_node = Node(i)
@@ -20,7 +19,6 @@ class Stack:
                 new_node.next = self.top
                 self.top = new_node
     
-
     def show(self):
         current_node = self.top
 

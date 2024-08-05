@@ -12,7 +12,6 @@ class Queue:
         self.rear = None
         self.length = 0
 
-    
     # to add node to rear of queue.
     def enqueue(self, data):
         new_node = Node(data)
@@ -26,7 +25,6 @@ class Queue:
 
         self.length += 1
     
-
     # to remove front node from queue.
     def dequeue(self):
         if self.front is None:
@@ -37,7 +35,6 @@ class Queue:
             if self.front is None:
                 self.rear = None
             
-
     # to print front node from queue.
     def peek(self):
         if self.front is None:
@@ -45,11 +42,9 @@ class Queue:
         else:
             print(self.front.data)
     
-
     # to print the size of queue.
     def size(self):
         print(self.length)
-
 
     # to print the queue is empty or not.
     def is_empty(self):
@@ -58,7 +53,6 @@ class Queue:
         else:
             print(True)
         
-    
     # to print the queue.
     def show(self):
         current_node = self.front

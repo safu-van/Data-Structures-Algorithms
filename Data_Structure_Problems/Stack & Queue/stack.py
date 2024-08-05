@@ -11,7 +11,6 @@ class Stack:
         self.top = None
         self.length = 0
     
-
     # to add node to top of stack.
     def push(self, data):
         new_node = Node(data)
@@ -24,7 +23,6 @@ class Stack:
 
         self.length += 1
     
-
     # to remove top node from stack.
     def pop(self):
         if self.top is None:
@@ -33,7 +31,6 @@ class Stack:
             self.top = self.top.next
             self.length -= 1
     
-
     # to print top node data from stack.
     def peek(self):
         if self.top is None:
@@ -41,11 +38,9 @@ class Stack:
         else:
             print(self.top.data)
     
-
     # to print the size of stack.
     def size(self):
         print(self.length)
-    
     
     # to print the stack is empty or not.
     def is_empty(self):
@@ -53,7 +48,6 @@ class Stack:
             print(False)
         else:
             print(True)
-    
     
     # to print the stack.
     def show(self):
